@@ -14,8 +14,22 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("list")
-    public List<User> list(){
+    @RequestMapping("findAll")
+    public List<User> findAll(){
         return userService.findAll();
+    }
+
+    @RequestMapping("findById")
+    public List<User> findById(int id){
+        return userService.findById(id);
+    }
+    @RequestMapping("addUser")
+    public User addUser(User user){
+        return userService.addUser(user);
+    }
+
+    @RequestMapping("deleteId")
+    public int deleteId(int id){
+        return userService.deleteId(id);
     }
 }
