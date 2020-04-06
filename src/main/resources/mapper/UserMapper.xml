@@ -4,4 +4,18 @@
     <select id="findAll" resultType="user">
         select * from user
     </select>
+    <select id="findById" resultType="user">
+        select * from user  where  id = #{id}
+    </select>
+    <insert id="addUser" parameterType="com.zhang.entity.User" keyProperty="id" useGeneratedKeys="true">
+        insert into user (id,name,gender,age,address,qq,email)
+        values (
+            #{id},#{name,jdbcType=VARCHAR},#{gender,jdbcType=VARCHAR},#{age},#{address,jdbcType=VARCHAR},
+            #{qq,jdbcType=VARCHAR},#{email,jdbcType=VARCHAR}
+        )
+    </insert>
+
+    <delete id="deleteId" parameterType="int">
+        delete from user where id=#{id}
+    </delete>
 </mapper>

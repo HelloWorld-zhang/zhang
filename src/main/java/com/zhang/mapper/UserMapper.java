@@ -9,4 +9,10 @@ import java.util.List;
 public interface UserMapper {
 
     public List<User> findAll();
+
+    public List<User> findById(int id);
+
+    public User addUser(User user);
+
+    public int deleteId(int id);
 }
